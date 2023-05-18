@@ -17,6 +17,7 @@ const apiMAp = {
     updateOrder: '/order/updateOrder',
 };
 const BASE_URL = 'http://127.0.0.1:4000';
+
 axios.interceptors.request.use((request) => {
     const token = window.localStorage.getItem('token');
     if (token) {
