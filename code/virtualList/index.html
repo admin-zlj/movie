@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>virtualList</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.virtual-scroll-viewport {
+				position: relative;
+				width: 240px;
+				height: 300px;
+				margin: 150px auto 0;
+				overflow: auto;
+				will-change: scroll-position;
+				border: 1px solid #aaaaaa;
+			}
+			/* 撑开高度 */
+			.virtual-scroll-spacer {
+				position: relative;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+			.virtual-scroll-list {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+			.virtual-scroll-item {
+				height: 50px;
+				padding-left: 15px;
+				line-height: 50px;
+			}
+			.virtual-scroll-item:nth-child(2n) {
+				background: #f6f8fa;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="virtual-scroll-viewport">
+			<div class="virtual-scroll-spacer"> </div>
+			<div class="virtual-scroll-list"> </div>
+		</div>
+	</body>
+	<script src="./index2.js"></script>
+</html>
