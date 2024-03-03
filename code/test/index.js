@@ -1,38 +1,3 @@
-// function getSearchParams(url) {
-// 	if (!url) {
-// 		return "";
-// 	}
-// 	let [href, params] = url.split("?");
-// 	let paramsArr = params.split("&");
-// 	let resObj = {};
-// 	paramsArr.forEach((element) => {
-// 		let [key, value] = element.split("=");
-// 		value = decodeURIComponent(value);
-// 		if (value.includes("{")) {
-// 			value = JSON.parse(value);
-// 		}
-// 		resObj[key] = value;
-// 	});
-// 	return resObj;
-// }
-// const url =
-// 	"https://fliggy.com/demo?name=feizhu&from=home&job=frontend&extraInfo=%7B%22a%22%3A%22b%22%2C%22c%22%3A%22d%22%7D";
-
-// // 测试代码请勿修改
-// if (
-// 	JSON.stringify(getSearchParams(url)) ===
-// 	JSON.stringify({
-// 		name: "feizhu",
-// 		from: "home",
-// 		job: "frontend",
-// 		extraInfo: { a: "b", c: "d" },
-// 	})
-// ) {
-// 	console.log("恭喜回答正确!");
-// } else {
-// 	console.log("还差一点");
-// }
-
 // const data = [
 // 	{ date: "2021-12-25", cnt: 12 },
 // 	{ date: "2021-12-28", cnt: 7 },
@@ -115,82 +80,40 @@
 // 	return arr
 // }
 
-// add , subtract , multiply , divide
-// function getArrMulMax(arr){
-// 	let findMax, findMin, maxNum ;
-// 	maxNum = findMax  = findMin = arr[0]
-// 	let curMax,curMin;
-// 	for (let i = 1; i < arr.length; i++) {
-// 		curMin = findMin *arr[i]
-// 		curMax = findMax * arr[i]
-// 		findMin = Math.min(curMin,curMax,arr[i])
-// 		findMax = Math.max(curMin,curMax,arr[i])
-// 		maxNum = Math.max(maxNum,findMax)
-// 	}
-// 	console.log(maxNum);
-// 	return maxNum
-// }
-//   let a = [1,-2,3,-5,10,-1]
-//   getArrMulMax(a)
-
-// let a = [1,2,34,5,6]
-
-// console.log(a.filter(i=>i==1));
-// a.reduce((pre,cur)=>{
-// 	console.log(pre,cur);
-// 	pre+=cur
-// 	return pre
-// })
-
-// function copy(obj) {
-// 	let newobj = Array.isArray(obj) ? [] : {};
-// 	for (const key in obj) {
-// 		if (obj[key] instanceof Object) {
-// 			if (typeof obj[key] === "function") {
-// 				newobj[key] = obj[key];
-// 			} else {
-// 				newobj[key] = copy(obj[key]);
-// 			}
-// 		} else {
-// 			newobj[key] = obj[key];
-// 		}
-// 	}
-// 	return newobj;
-// }
-
 async function A() {
-	const a = await new Promise((resolve) => {
-		setTimeout(() => {
-			console.log("1");
-			resolve();
-		}, 11);
-	});
-	setTimeout(() => {
-		console.log("2");
-	}, 10);
+  const a = await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('1');
+      resolve();
+    }, 10);
+  });
+  setTimeout(() => {
+    console.log('2');
+  }, 10);
 }
 
 async function B() {
-	const b = await new Promise((resolve) => {
-		setTimeout(() => {
-			console.log("3");
-			resolve();
-		}, 0);
-	});
-	setTimeout(() => {
-		console.log("4");
-	}, 0);
+  const b = await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('3');
+      resolve();
+    }, 0);
+  });
+  setTimeout(() => {
+	
+    console.log('4');
+  }, 0);
 }
 
-function test1(){
-	A();
-	B()
+function test1() {
+  A();
+  B();
 }
 
-async function test2(){
-	await A();
+async function test2() {
+  await A();
 
-	await B()
+  await B();
 }
-test1()
-// test2()
+// test1();
+test2()
