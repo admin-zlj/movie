@@ -1,7 +1,7 @@
 
 # 题目
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c8836a453be4cd39041ba15b1694f0b~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1032&h=621&s=240066&e=png&b=f9f9f9)
+![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/question.JPG)
 
 # 答案
 
@@ -12,13 +12,14 @@
 >  3. 一共 36种
 
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a802030c0604ae5856a15a455ae7268~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=580&h=699&s=3807&e=png&b=ffffff)
+![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/1.png)
 
 ## 二、数据结构
 我可以发现这个排版用`grid`布局可以很轻松的实现，我们可以参考`grid`布局的属性`grid-template-areas`。用下面这种结构来表示：
 
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/66e900db67314a19b67826029d1dfdb2~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=871&h=741&s=8784&e=png&b=ffffff)
+![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/2.png)
+
 ```js
 //与后端约定数据格式为json或者Object
 //列如：
@@ -33,7 +34,7 @@
 ## 三、使用grid布局
 这样的话就可以通过`grid-template-areas`这一个属性进行控制排版，而且还可以对每一个`item`进行设置`gap`、`width`、`height`、等属性来控制内部的样式
 
-![动画.gif](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9788ff5569104c6d9f5ddff0d7225344~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1902&h=1002&s=333358&e=gif&f=115&b=292c34)
+![gif.gif](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/gif.gif)
 
 
 # Last
