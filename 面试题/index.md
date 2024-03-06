@@ -1,7 +1,4 @@
----
-theme: fancy
-highlight: atelier-plateau-dark
----
+
 # 题目
 
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c8836a453be4cd39041ba15b1694f0b~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1032&h=621&s=240066&e=png&b=f9f9f9)
