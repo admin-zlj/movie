@@ -1,5 +1,5 @@
 let a = [1, [2, [3, [4]]]];
-// console.log(a.flat());
+
 Array.prototype.myflat = function () {
   let newarr = this.map((item) => {
     if (Array.isArray(item)) {
@@ -7,28 +7,36 @@ Array.prototype.myflat = function () {
     }
     return item;
   });
-  // console.log(newarr);
+
   return [].concat(...newarr);
 };
 
-console.log(a.myflat());
-// console.log([].concat(...a));
-// console.log([1].concat([99,98],[3,4,5]));
-
-//flat
-function myflat1(arr) {
-  return [].concat(...arr);
+Array.prototype.allFlat = function () {
+  let arr = this;
+  let hasArr = true;
+  while (hasArr) {
+    arr = [].concat(...arr);
+    hasArr = arr.some(Array.isArray);
+  }
+  return arr;
+};
+function flattenArray(arr) {
+  return arr.reduce(
+    (acc, val) => (Array.isArray(val) ? acc.concat(...flattenArray(val)) : acc.concat(val)),
+    []
+  );
 }
+// console.log('first', flattenArray(a), a);
 
-function flat(arr) {
-  let newarr = arr.map((item) => {
-    if (Array.isArray(item)) {
-      return flat(item);
-    }
-    return item;
-  });
+Array.prototype.copyFlat = function (n) {
+  let num = n || 1;
+  let arr = this;
+  for (let i = 0; i < num; i++) {
+    arr = [].concat(...arr);
+  }
 
-  return [].concat(...newarr);
-}
+  return arr;
+};
 
-console.log('a', flat(a))
+console.log('flat', a.flat(2), a);
+console.log('copyFlat', a.copyFlat(2), a);
