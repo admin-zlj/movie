@@ -42,3 +42,7 @@ if (
 } else {
   console.log('还差一点');
 }
+let a={c:1,v:{a:1,b:1}}
+let b={m:2,n:1,x:{y:1}}
+let res= Object.assign(a,b)
+console.log(res)

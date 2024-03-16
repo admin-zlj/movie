@@ -26,3 +26,10 @@
 	background-color: RED;
 	grid-area: text;
 }
+
+.txt {
+	background-color: RED;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
