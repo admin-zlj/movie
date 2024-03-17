@@ -1,50 +1,49 @@
 let student1 = {
-	name: "小明",
-	age: 14,
-	sex: function () {
-		let aaaaaa = "aaaa";
-	},
-	girlfriend: {
-		name: "小红",
-		age: 13,
-		friend: {
-			name: "花花",
-		},
-	},
+  name: '小明',
+  age: 14,
+  sex: function () {
+    console.log('first', this.age, 'age');
+  },
+  girlfriend: {
+    name: '小红',
+    age: 13,
+    friend: {
+      name: '花花',
+    },
+  },
 };
 
-/**
- * 浅拷贝
- *  1.Object.assign({}，)
- * 	2.[...obj]
- */
+let a = [1, [2, undefined, [3, [4]]]];
 
-//深拷贝
-//1.json  undefined funtion 无法拷贝
-// let studen2 = JSON.parse(JSON.stringify(student1))
-//2.递归
-function copy(obj) {
-	let newobj = Array.isArray(obj) ? [] : {};
-	for (const key in obj) {
-		if (obj[key] instanceof Object) {
-			if (typeof obj[key] === "function") {
-				newobj[key] = obj[key];
-			} else {
-				newobj[key] = copy(obj[key]);
-			}
-		} else {
-			newobj[key] = obj[key];
-		}
-	}
-	return newobj;
+function deepClone(value) {
+  if (!isObjOrArr(value)) return value;
+
+  let res = Array.isArray(value) ? [] : {};
+
+  for (const key in value) {
+    if (isObjOrArr(value[key])) {
+      res[key] = deepClone(value[key]);
+    } else {
+      if (typeof value[key] === 'function') {
+        res[key] = new Function(`return ${value[key].toString()}`)();
+      } else {
+        res[key] = value[key];
+      }
+    }
+  }
+  return res;
 }
-let student2 = copy(student1);
+function isObjOrArr(value) {
+  return ['[object Object]', '[object Array]'].includes(Object.prototype.toString.call(value));
+}
 
-console.log(student2);
-console.log(student1 === student2);
-// console.log(student1.girlfriend === studen2.girlfriend );
-// console.log(student2.sex);
+let s2 = deepClone(student1);
 
-let a=[1,[2,undefined,[3,[4]]]]
+console.log(s2);
+console.log(student1.sex === s2.sex);
+console.log(student1.sex(), s2.sex());
 
+let a2 = deepClone(a);
 
+console.log(a2);
+console.log(a[1] === a2[1]);

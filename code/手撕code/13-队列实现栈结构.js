@@ -1,11 +1,11 @@
 class Stack {
-  _list = [];
+  list = [];
 
   push(item) {
-    this._list = [item, ...this._list];
+    this.list = [item, ...this.list];
   }
   pop() {
-    return this._list.shift();
+    return this.list.shift();
   }
 }
 
@@ -32,4 +32,4 @@ s1.push(1);
 s1.push(2);
 s1.push(3);
 s1.pop();
-console.log('', s1._list);
+

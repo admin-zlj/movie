@@ -10,6 +10,7 @@ Array.prototype.myReduce = function (cb, ...args) {
   return res;
 };
 
+
 let res = [1, 2, 3].myReduce((pre, cur) => {
   console.log('pre,cur', pre, cur);
   return pre + cur;
