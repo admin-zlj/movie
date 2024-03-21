@@ -19,7 +19,7 @@ function rotateArr(arr, k) {
 console.log(rotateArr([1, 2, 3, 4, 5, 6, 7], 6));
 
 /**
- * 旋转数组
+ *
  * 输入: [1, 3, 2, 10, 9, 5, 13]
  * 输出： ['1-3','5','9-10','13']
  * @param {[]} arr
