@@ -4,9 +4,9 @@
  * 重试上限为times次，
  * 重试间隔为interval，
  * 重试成功返回成功的结果，失败返回失败的结果
- * @param {*} fn
- * @param {*} interval
- * @param {*} times
+ * @param {Promise} fn
+ * @param {number} interval
+ * @param {number} times
  */
 
 async function reTry(fn, interval, times) {

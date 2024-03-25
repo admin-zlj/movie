@@ -38,7 +38,6 @@ async function conCurrentRequest(promiseArr, maxNum) {
       } finally {
         successCount++;
         if (successCount === allNum) {
-          console.log('allData', allData);
           resolve(allData);
         }
         if (curIndex < allNum) {
