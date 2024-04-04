@@ -1,6 +1,6 @@
 # 题目
 
-![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/question.JPG)
+![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%8E%92%E7%89%88/images/1.png)
 
 # 答案
 
@@ -12,13 +12,13 @@
 > 2. 模版数 6 种
 > 3. 一共 36 种
 
-![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/1.png)
+![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%8E%92%E7%89%88/images/1.png)
 
 ## 二、数据结构
 
 我可以发现这个排版用`grid`布局可以很轻松的实现，我们可以参考`grid`布局的属性`grid-template-areas`。用下面这种结构来表示：
 
-![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/2.png)
+![image.png](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%8E%92%E7%89%88/images/2.png)
 
 ```js
 //与后端约定数据格式为json或者Object
@@ -35,7 +35,7 @@
 
 这样的话就可以通过`grid-template-areas`这一个属性进行控制排版，而且还可以对每一个`item`进行设置`gap`、`width`、`height`、等属性来控制内部的样式
 
-![gif.gif](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/images/gif.gif)
+![gif.gif](https://github.com/admin-zlj/myProject/blob/main/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%8E%92%E7%89%88/images/gif.gif)
 
 # Last
 
