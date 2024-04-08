@@ -1,24 +1,33 @@
 class Event {
   constructor() {
-    this.events = {};
+    this.Events = {};
   }
-  on(key, cb) {
-    this.events[key] = cb;
+  on(eventName, fn) {
+    if (!this.Events[eventName]) {
+      this.Events[eventName] = [fn];
+    } else {
+      this.Events[eventName].push(fn);
+    }
   }
-  emit(key, params = {}) {
-    this.events[key] && this.events[key](params);
+  emit(eventName) {
+    this.Events[eventName] && this.Events[eventName].forEach((fn) => fn && fn());
   }
-  remove(key) {
-    this.events[key] = null;
+  remove(eventName, fn) {
+    if (!fn) {
+      this.Events[eventName] = [];
+      return;
+    }
+    if (this.Events[eventName]) {
+      this.Events[eventName] = this.Events[eventName].filter((item) => item !== fn);
+    }
+  }
+  once(eventName, fn) {
+    const onceFn = function () {
+      fn();
+      this.remove(eventName, onceFn);
+    };
+    this.on(eventName, onceFn);
   }
 }
 
 const ev = new Event();
-
-ev.emit('a');
-ev.on('a', function () {
-  console.log('aaaa');
-});
-ev.emit('a');
-ev.remove('a');
-ev.emit('a');

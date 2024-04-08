@@ -23,7 +23,13 @@ const data = [
       {
         id: 111201,
         name: '杭州',
-        children: [],
+        children: [
+          {
+            id: 11120111,
+            name: '西湖区',
+            children: [],
+          },
+        ],
       },
     ],
   },
@@ -55,4 +61,18 @@ function getNameById(data, id) {
     }
   }
 }
-console.log(getNameById(data, 1102211));
+
+function getNameById2(data, id) {
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+    if (item.id === id) {
+      return item.name;
+    }
+    if (item.children && item.children.length > 0) {
+      let res = getNameById2(item.children, id);
+      if (!!res) return res;
+    }
+  }
+  return null;
+}
+console.log(getNameById2(data, 1230));
